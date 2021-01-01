@@ -1,0 +1,50 @@
+
+Write a SQL query to get the second highest salary from the Employee table.
+
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+For example, given the above Employee table, the query should return 200 as the second highest salary. If there is no second highest salary, then the query should return null.
+
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| 200                 |
++---------------------+
+
+------------------------------------------
+Analysis: the second highest salary is the next value to the highest, we will need a table order by descending salary and then use limit and offset clause to get the next highest value
+We also want to return NULL if there's no second highest salary, we can use IFNULL()
+
+Query 1: SELECT( SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary
+Query 2: SELECT SALARY AS SecondHighestSalary FROM EMPLOYEE ORDER BY SALARY DESC LIMIT 1,1 (This will pass an error if the table only contains one row)
+Query 3: SELECT IFNULL((SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1,1), NULL) AS SecondHighestSalary
+
+Keypoint: IFNULL(NULL/expression, alt_value), LIMIT OFFSET clause, consider table with less rows than n rows requested
+
+Note: Use MySQL to get the nth hihgest/lowest value
+
+Generic syntax ->
+SELECT select_list
+FROM table_name
+ORDER BY sort_expression
+LIMIT n-1, 1;
+
+The clause LIMIT n-1, 1 returns 1 row starting at the row n.
+
+(GeeksforGeeks: https://www.geeksforgeeks.org/sql-offset-fetch-clause/
+ MySQL Tutorial https://www.mysqltutorial.org/mysql-limit.aspx)
+- The OFFSET argument is used to identify the starting point to return rows from a result set. Basically, it exclude the first set of records.
+- OFFSET can only be used with ORDER BY clause. It cannot be used on its own.
+- OFFSET value must be greater than or equal to zero. It cannot be negative, else return error.
+
+Syntax:
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+ORDER BY column_name
+OFFSET rows_to_skip ROWS;
