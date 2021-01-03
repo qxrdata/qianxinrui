@@ -87,7 +87,7 @@ a special temporary alternation of the logo in Google's homepages intended to co
 2. The second? How many users click to page 2 of results? 
 3. Once a user clicks out to result page, how long before they click the back button to come back to the search results page?
  
- Different ranking models applied on real users is not how Google search test its searhc engine. The fact is that Google does not use real usage data to tune their search 
+- Different ranking models applied on real users is not how Google search test its searhc engine. The fact is that Google does not use real usage data to tune their search 
  ranking algorithm as user performance/metrics are usually not sensitive to theses changes. Instead Google relies on a small panel of raters to test ranking models. 
  Two reasons being the first, users are trained to trust Google and click on the first result no matter what.So the new ranking models would receive slight change in usage data. 
  The second is that user don't what they are missing. This can be explained by two broad classes of queries search engine deals with:
@@ -98,7 +98,7 @@ a special temporary alternation of the logo in Google's homepages intended to co
     best feedback for the rankings
 
 ## Resources
-GS statcounter https://gs.statcounter.com/search-engine-market-share
-https://www.internetlivestats.com/google-search-statistics/#trend
-https://developers.google.com/search/blog
+GS statcounter https://gs.statcounter.com/search-engine-market-share\
+https://www.internetlivestats.com/google-search-statistics/#trend\
+https://developers.google.com/search/blog\
 https://anand.typepad.com/datawocky/2008/06/how-google-measures-search-quality.html
