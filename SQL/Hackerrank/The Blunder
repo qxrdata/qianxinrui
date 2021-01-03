@@ -10,3 +10,6 @@ Query: SELECT CAST(CEIL(avg(Salary) - avg(CAST(REPLACE(Salary, '0', '')AS FLOAT)
 
 Keypoint: REPLACE(), AVG(), CEIL(), CAST()
 Note: REPLACE() implicitly converts float into string, avg() on a string will return an error, therefore we need to convert the salary with CAST() to a float type
+      CAST() function converts a value (of any type) into a specified datatype.
+
+
