@@ -3,8 +3,8 @@ Write a query calculating the amount of error (i.e.: actual - miscalculated aver
   
 ***Input Format***  
 The EMPLOYEES table is described as follows:  
-  
-![img](https://s3.amazonaws.com/hr-challenge-images/12893/1443817108-adc2235c81-1.png)  
+
+![alt text](https://s3.amazonaws.com/hr-challenge-images/12893/1443817108-adc2235c81-1.png)  
   
 ***Note:*** Salary is measured in dollars per month and its value is < 10^5. 
 
