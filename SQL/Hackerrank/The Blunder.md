@@ -11,10 +11,10 @@ The EMPLOYEES table is described as follows:
 ## Analysis:
 we need the difference between the actual average salary and the miscalculated salary
 
-To remove o from salary number -> REPLACE(SALARY, '0', '')
-To calculate average salary -> avg(salary) 
-To calculate average of miscalcalculated salary -> avg(REPLACE(SALARY, '0', ''))
-To calculate the difference -> avg(salary) - avg(REPLACE(SALARY, '0', ''))
+To remove o from salary number -> REPLACE(SALARY, '0', '')\
+To calculate average salary -> avg(salary) \
+To calculate average of miscalcalculated salary -> avg(REPLACE(SALARY, '0', ''))\
+To calculate the difference -> avg(salary) - avg(REPLACE(SALARY, '0', ''))\
 To get the next rounded number: CAST(CEIL(AVG(salary) - AVG(CAST(REPLACE(SALARY, '0', '')))))
 
 ## Query:
