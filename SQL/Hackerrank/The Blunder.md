@@ -8,7 +8,8 @@ The EMPLOYEES table is described as follows:
   
 ***Note:*** Salary is measured in dollars per month and its value is < 10^5. 
 
-Analysis: we need the difference between the actual average salary and the miscalculated salary
+## Analysis:
+we need the difference between the actual average salary and the miscalculated salary
 
 To remove o from salary number -> REPLACE(SALARY, '0', '')
 To calculate average salary -> avg(salary) 
@@ -16,10 +17,16 @@ To calculate average of miscalcalculated salary -> avg(REPLACE(SALARY, '0', ''))
 To calculate the difference -> avg(salary) - avg(REPLACE(SALARY, '0', ''))
 To get the next rounded number: CAST(CEIL(AVG(salary) - AVG(CAST(REPLACE(SALARY, '0', '')))))
 
-Query: SELECT CAST(CEIL(avg(Salary) - avg(CAST(REPLACE(Salary, '0', '')AS FLOAT)))AS FLOAT) AS Difference FROM Employees
+## Query:
+```
+SELECT CAST(CEIL(avg(Salary) - avg(CAST(REPLACE(Salary, '0', '')AS FLOAT)))AS FLOAT) AS Difference FROM Employees
+```
 
-Keypoint: REPLACE(), AVG(), CEIL(), CAST()
-Note: REPLACE() implicitly converts float into string, avg() on a string will return an error, therefore we need to convert the salary with CAST() to a float type
-      CAST() function converts a value (of any type) into a specified datatype.
+***Keypoint:*** 
+REPLACE(), AVG(), CEIL(), CAST()
+
+***Note:*** 
+REPLACE() implicitly converts float into string, avg() on a string will return an error, therefore we need to convert the salary with CAST() to a float type
+CAST() function converts a value (of any type) into a specified datatype.
 
 
